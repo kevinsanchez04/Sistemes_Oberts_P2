@@ -69,7 +69,7 @@ public class ArticleGQ {
     
     public String splitData(){
         String[] dates = data.split("-");
-        return Month.of(Integer.parseInt(dates[1])).getDisplayName(TextStyle.SHORT,Locale.ENGLISH)+ dates[2];
+        return Month.of(Integer.parseInt(dates[1])).getDisplayName(TextStyle.SHORT,Locale.ENGLISH)+" "+ dates[2];
     }
     public boolean isPrivacitat() {
         return privacitat;
