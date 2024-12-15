@@ -31,9 +31,57 @@
     </head>
     <body>
         <div class="container">
+            <span class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-xl-2 row-cols-xxl-3">
+                <form action="${mvc.uri('/filter')}" method="GET" class="col pt-3">
+                  <label class="d-block text-center">Select Topic</label>
+                  <span class="d-inline-flex flex-wrap justify-content-center">
+                    <span class="me-3">
+                      <input class="me-1" type="checkbox" id="HTML" name="topics" value="HTML">
+                      <label for="HTML" class="mb-0">HTML</label>
+                    </span>
+                    <span class="me-3">
+                      <input class="me-1" type="checkbox" id="CSS" name="topics" value="CSS">
+                      <label for="CSS" class="mb-0" >CSS</label>
+                    </span>
+                    <span class="me-3">
+                      <input class="me-1" type="checkbox" name="topics" value="Python">
+                      <label for="Python" class="mb-0">Python</label>
+                    </span>
+                    <span class="me-3">
+                      <input class="me-1" type="checkbox" name="topics" value="C">
+                      <label for="C" class="mb-0">C</label>
+                    </span>
+                    <span class="me-3">
+                      <input class="me-1" type="checkbox" name="topics" value="JavaScript">
+                      <label for="JavaScript" class="mb-0">JavaScript</label>
+                    </span>
+                    <span class="me-3">
+                      <input class="me-1" type="checkbox" name="topics" value="Java">
+                      <label for="Java" class="mb-0">Java</label>
+                    </span>
+                    <span class="me-3">
+                      <input class="me-1" type="checkbox" name="topics" value="Web_Programming">
+                      <label for="Web_Programming" class="mb-0">Web_Programming</label>
+                    </span>
+                  </span>
+                  <span class="d-flex justify-content-center align-items-center mt-2">
+                    <label class="mb-0 me-2" >Name of the author</label> 
+                    <input type="text" name="author" value="NULL">
+                  </span>
+                  <span class="d-flex justify-content-center mt-3 mb-3">
+                    <input type="submit" value="Submit">
+                  </span>
+                </form>
+                <span class="col pt-3">
+                  <p>ADD Article</p>
+                </span>
+                <span class="col pt-3">
+                  <p>Login</p>
+                </span>
+            </span>
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-xl-2 row-cols-xxl-3">
                 <c:forEach var="art" items="${articles}">
-                    <a href="${pageContext.request.contextPath}/Web/Article/1" style="text-decoration: none;">
+                    <a href="${pageContext.request.contextPath}/Web/Article/${art.id}" style="text-decoration: none;">
                         <div class="col pt-3">
                             <div class="card border border-dark m-1 p-0">
                                 <img class="card-img-top p-3" style="height: 15rem; object-fit: contain;" src="${art.imatge}" alt="Imagen Articulo">
