@@ -18,6 +18,7 @@ public class ArticleGQ {
     private String imatge;
     private String autor;
     private boolean privacitat;
+    private Long id;
 
     public String getTitol() {
         return titol;
@@ -77,5 +78,13 @@ public class ArticleGQ {
 
     public void setPrivacitat(boolean privacitat) {
         this.privacitat = privacitat;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
