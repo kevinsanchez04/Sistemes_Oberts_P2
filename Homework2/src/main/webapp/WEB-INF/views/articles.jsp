@@ -31,6 +31,7 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/views/layout/nav.jsp" />
+        <jsp:include page="/WEB-INF/views/layout/footer.jsp" />
         <button class="btn btn-dark w-100 rounded-bottom text-white" href="#" data-bs-toggle="offcanvas" data-bs-target="#filtre" style="font-family:'Parkinsans'">Filtre</button>
 	
         <div class="offcanvas offcanvas-start" tabindex="-1" id="filtre" >

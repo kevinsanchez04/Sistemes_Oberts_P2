@@ -1,38 +1,69 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package deim.urv.cat.homework2.service;
 
-import deim.urv.cat.homework2.model.ArticleGQ;
-import java.util.LinkedList;
+import deim.urv.cat.homework2.controller.ArticleForm;
+import java.util.Arrays;
 import java.util.List;
+
+import deim.urv.cat.homework2.model.ArticleDTO;
+import deim.urv.cat.homework2.model.ArticleGQ;
+import deim.urv.cat.homework2.UnauthorizedExp;
+import deim.urv.cat.homework2.model.Topic;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import deim.urv.cat.homework2.controller.FilterForm;
+import deim.urv.cat.homework2.controller.UserForm;
+import jakarta.ws.rs.client.Entity;
+import java.util.stream.Collectors;
 
 public class ArticleServiceImpl implements ArticleService {
     
+    private final WebTarget webTarget;
+    private final jakarta.ws.rs.client.Client client;
+    private static final String BASE_URI = "http://localhost:8080/Homework1/rest/api/v1";
+    
+    public ArticleServiceImpl() {
+        client = jakarta.ws.rs.client.ClientBuilder.newClient();
+        webTarget = client.target(BASE_URI).path("article");
+    }
+    
     @Override
-    public List<ArticleGQ> findAll(){
-        
-        List<ArticleGQ> lista = new LinkedList<>();
-        
-        // Artículo 1
-        ArticleGQ article1 = new ArticleGQ();
-        article1.setTitol("Título del artículo 4");
-        article1.setResum("Resum del article 4");
-        article1.setVisualitzacions(4500);
-        article1.setData("2024-11-14");
-        article1.setImatge("https://www.caracteristicass.de/wp-content/uploads/2023/02/imagenes-artisticas.jpg");
-        article1.setAutor("Autor4");
-        lista.add(article1);
-        // Artículo 2
-        ArticleGQ article2 = new ArticleGQ();
-        article2.setTitol("Título del artículo 5");
-        article2.setResum("Resum del article 5");
-        article2.setVisualitzacions(4400);
-        article2.setData("2024-11-15");
-        article2.setImatge("https://www.caracteristicass.de/wp-content/uploads/2023/02/imagenes-artisticas.jpg");
-        article2.setAutor("Autor5");
-        lista.add(article2);
-        return lista;
-    };   
+    public List<ArticleGQ> findAll(FilterForm filter){
+        WebTarget target = webTarget;
+        if (filter != null){
+            for(Topic topic : filter.getTopics()){
+                target = target.queryParam("topic", topic.name());
+            }
+            if(!filter.getAuthor().equals("NULL")){
+                target = target.queryParam("author", filter.getAuthor());
+            }
+        }
+        Response response = target.request(MediaType.APPLICATION_JSON).get();
+        if (response.getStatus() == 200) {
+            return response.readEntity(new GenericType<List<ArticleGQ>>() {});
+        }
+        return null;
+    };
+    
+    @Override
+    public ArticleDTO findId(Long id) throws NullPointerException{
+        Response response = webTarget.path(id.toString())
+                .request(MediaType.APPLICATION_JSON)
+                .get();
+        if (response.getStatus() == 200) {
+            return response.readEntity(ArticleDTO.class);
+        }else if(response.getStatus() == 400){
+            throw new NullPointerException();
+        }
+        return null;
+    }
+    
+    @Override
+    public boolean newArticle(ArticleForm art) throws UnauthorizedExp{
+        Response response = webTarget.request(MediaType.APPLICATION_JSON)
+               .post(Entity.entity(art, MediaType.APPLICATION_JSON), 
+                    Response.class);
+        return response.getStatus() == 201;
+    }
 }
