@@ -1,10 +1,12 @@
 package deim.urv.cat.homework2.service;
 
+import deim.urv.cat.homework2.controller.ArticleForm;
 import java.util.Arrays;
 import java.util.List;
 
 import deim.urv.cat.homework2.model.ArticleDTO;
 import deim.urv.cat.homework2.model.ArticleGQ;
+import deim.urv.cat.homework2.UnauthorizedExp;
 import deim.urv.cat.homework2.model.Topic;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
@@ -45,14 +47,23 @@ public class ArticleServiceImpl implements ArticleService {
     };
     
     @Override
-    public ArticleDTO findId(Long id){
-         Response response = webTarget.path(id.toString())
+    public ArticleDTO findId(Long id) throws NullPointerException{
+        Response response = webTarget.path(id.toString())
                 .request(MediaType.APPLICATION_JSON)
                 .get();
         if (response.getStatus() == 200) {
             return response.readEntity(ArticleDTO.class);
+        }else if(response.getStatus() == 400){
+            throw new NullPointerException();
         }
         return null;
     }
     
+    @Override
+    public boolean newArticle(ArticleForm art) throws UnauthorizedExp{
+        Response response = webTarget.request(MediaType.APPLICATION_JSON)
+               .post(Entity.entity(art, MediaType.APPLICATION_JSON), 
+                    Response.class);
+        return response.getStatus() == 201;
+    }
 }
