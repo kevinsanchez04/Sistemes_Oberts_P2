@@ -1,6 +1,9 @@
 package deim.urv.cat.homework2.model;
 
+import java.time.Month;
+import java.time.format.TextStyle;
 import java.util.List;
+import java.util.Locale;
 
 /**
  *
@@ -74,5 +77,10 @@ public class ArticleDTO {
 
     public void setText(String text) {
         this.text = text;
+    }
+    
+    public String splitData(){
+        String[] dates = data.split("-");
+        return Month.of(Integer.parseInt(dates[1])).getDisplayName(TextStyle.SHORT,Locale.ENGLISH)+" "+ dates[2]+", "+dates[0];
     }
 }

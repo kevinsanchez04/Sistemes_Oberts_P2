@@ -1,5 +1,9 @@
 package deim.urv.cat.homework2.model;
 
+import java.time.Month;
+import java.time.format.TextStyle;
+import java.util.Locale;
+
 
 /**
  *
@@ -13,8 +17,8 @@ public class ArticleGQ {
     private String data;
     private String imatge;
     private String autor;
-    
-    
+    private boolean privacitat;
+    private Long id;
 
     public String getTitol() {
         return titol;
@@ -64,4 +68,23 @@ public class ArticleGQ {
         this.autor = autor;
     }
     
+    public String splitData(){
+        String[] dates = data.split("-");
+        return Month.of(Integer.parseInt(dates[1])).getDisplayName(TextStyle.SHORT,Locale.ENGLISH)+" "+ dates[2];
+    }
+    public boolean isPrivacitat() {
+        return privacitat;
+    }
+
+    public void setPrivacitat(boolean privacitat) {
+        this.privacitat = privacitat;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
