@@ -70,7 +70,7 @@ public class ArticleController {
     @POST
     @UriRef("/insert")
     public String filter(@Valid @BeanParam ArticleForm article) throws UnauthorizedExp {
-        if (bindingResult.isFailed()) {
+        if (!service.newArticle(article) && bindingResult.isFailed()) {
             AlertMessage alert = AlertMessage.danger("Validation failed!");
             bindingResult.getAllErrors()
                     .stream()
