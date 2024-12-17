@@ -43,6 +43,7 @@ public class Article implements Serializable {
     private LocalDate data;
     
     @NotNull(message="Article has to have IMAGE")
+    @Column(length=1024)
     private String imatge;
     
     @NotNull(message="Article has to have two Topics")
