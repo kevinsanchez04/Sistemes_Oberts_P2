@@ -19,6 +19,12 @@
             <li class="nav-item me-3">
               <a class="nav-link active" href="${mvc.uri('addArticle')}">Add Article</a>
             </li>
+            <li class="nav-item me-3">
+              <a class="nav-link active" href="${mvc.uri('addArticle')}">Customers</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link active" href="${mvc.uri('addArticle')}">Profile</a>
+            </li>
           </ul>
         </div>
     </div>
