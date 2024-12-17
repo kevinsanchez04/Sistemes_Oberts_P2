@@ -26,6 +26,8 @@ public class ArticleGQ {
         data = article.getData().toString();
         imatge = article.getImatge();
         autor = article.getAutor().getUsername();
+        privacitat = article.isPrivacitat();
+        id = article.getId();
     }  
     
     public ArticleGQ(){
