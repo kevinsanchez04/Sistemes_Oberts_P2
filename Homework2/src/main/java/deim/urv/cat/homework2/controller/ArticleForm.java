@@ -1,12 +1,16 @@
 package deim.urv.cat.homework2.controller;
 
 import deim.urv.cat.homework2.model.Topic;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 import jakarta.mvc.binding.MvcBinding;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import jakarta.ws.rs.FormParam;
 import java.util.List;
 
+@Named("articleForm")
+@RequestScoped
 public class ArticleForm {
     
     @FormParam("titol")
