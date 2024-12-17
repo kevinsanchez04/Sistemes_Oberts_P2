@@ -5,6 +5,7 @@
 <html>
     <head>
         <title>Articles</title>
+        <link rel="icon" href="https://th.bing.com/th/id/R.d77e50fa135055406fbeadb0b22b3a1d?rik=IKd5fSdJqcvPCw&pid=ImgRaw&r=0">
         <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -31,7 +32,7 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/views/layout/nav.jsp" />
-        <jsp:include page="/WEB-INF/views/layout/footer.jsp" />
+        
         <button class="btn btn-dark w-100 rounded-bottom text-white" href="#" data-bs-toggle="offcanvas" data-bs-target="#filtre" style="font-family:'Parkinsans'">Filtre</button>
 	
         <div class="offcanvas offcanvas-start" tabindex="-1" id="filtre" >
@@ -83,6 +84,7 @@
                 </c:forEach>
             </div>  
         </div>
+        <jsp:include page="/WEB-INF/views/layout/footer.jsp" />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
