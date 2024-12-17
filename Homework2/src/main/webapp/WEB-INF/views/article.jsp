@@ -34,7 +34,6 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/views/layout/nav.jsp" />
-        <jsp:include page="/WEB-INF/views/layout/footer.jsp" />
         <div class="container mt-2 mt-lg-5 ">
             <div class="d-flex justify-content-center">
                 <div class="col-12 col-lg-6 border border-dark border-5 rounded p-4 bg-white">
@@ -67,5 +66,8 @@
                 </div>
             </div>
         </div>
+        <footer class="fixed-bottom">
+            <jsp:include page="/WEB-INF/views/layout/footer.jsp"/>
+        </footer>      
     </body>
 </html>
