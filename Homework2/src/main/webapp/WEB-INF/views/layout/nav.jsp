@@ -14,7 +14,7 @@
               <a class="nav-link active" href="${pageContext.request.contextPath}/Web/Article">Home</a>
             </li>
             <li class="nav-item me-3">
-              <a class="nav-link active" href="${pageContext.request.contextPath}/Web/Login">LogIn</a>
+              <a class="nav-link active" href="${pageContext.request.contextPath}/Web/LogIn/0">LogIn</a>
             </li>
             <li class="nav-item me-3">
               <a class="nav-link active" href="${mvc.uri('addArticle')}">Add Article</a>
