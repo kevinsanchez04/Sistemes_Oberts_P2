@@ -40,9 +40,7 @@ public class ArticleController {
         try{
             ArticleDTO art = service.findId(id);
             if(art == null){
-                models.put("message", "You Have To Be Logged");
-                models.put("articles",service.findAll(null));
-                return "articles.jsp";
+                return "redirect:/LogIn/"+id;
             }
             models.put("article",art);
             return "article.jsp";            
