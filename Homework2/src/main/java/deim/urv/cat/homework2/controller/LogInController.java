@@ -29,11 +29,10 @@ public class LogInController {
     @Path("/article")
     public String goToArticle(@Valid @BeanParam LogInForm log){
         validar(log);
-        if(log.getId() == 0){
-            return "redirect:Article";
-        }else{
-            return "redirect:/Article/"+log.getId();
-        }
+        //Depenent del id rediriguim a la pagina corresponent
+        if(log.getId() == 0) return "redirect:Article";
+        if(log.getId() == -1) return "redirect:Article/addArticle";
+        return "redirect:/Article/"+log.getId();
     }
     
     private boolean validar(LogInForm log){
