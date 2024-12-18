@@ -11,8 +11,6 @@ import jakarta.ws.rs.QueryParam;
 @Named("filterForm")
 @RequestScoped
 public class FilterForm {
-    
-    private static final long serialVersionUID = 1L;
 
     @QueryParam("topics")
     @MvcBinding
