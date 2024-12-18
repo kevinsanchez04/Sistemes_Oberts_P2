@@ -1,19 +1,16 @@
 package deim.urv.cat.homework2.controller;
 
-import deim.urv.cat.homework2.model.Topic;
-import jakarta.inject.Named;
-import jakarta.mvc.binding.MvcBinding;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-import jakarta.ws.rs.FormParam;
-import jakarta.ws.rs.QueryParam;
 import java.util.List;
 
+import deim.urv.cat.homework2.model.Topic;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
+import jakarta.mvc.binding.MvcBinding;
+import jakarta.ws.rs.QueryParam;
+
 @Named("filterForm")
+@RequestScoped
 public class FilterForm {
-    
-    private static final long serialVersionUID = 1L;
 
     @QueryParam("topics")
     @MvcBinding
