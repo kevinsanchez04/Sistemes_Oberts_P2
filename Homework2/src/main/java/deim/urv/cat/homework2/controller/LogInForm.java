@@ -3,7 +3,6 @@ package deim.urv.cat.homework2.controller;
 import jakarta.mvc.binding.MvcBinding;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import jakarta.ws.rs.FormParam;
 import jakarta.ws.rs.QueryParam;
 
 public class LogInForm {
