@@ -3,4 +3,4 @@
 *.xml
 *.propierties
 *.war
-.*lst
+*.lst
