@@ -1,21 +1,18 @@
 package deim.urv.cat.homework2.service;
 
-import deim.urv.cat.homework2.controller.ArticleForm;
-import java.util.Arrays;
 import java.util.List;
 
+import deim.urv.cat.homework2.UnauthorizedExp;
+import deim.urv.cat.homework2.controller.ArticleForm;
+import deim.urv.cat.homework2.controller.FilterForm;
 import deim.urv.cat.homework2.model.ArticleDTO;
 import deim.urv.cat.homework2.model.ArticleGQ;
-import deim.urv.cat.homework2.UnauthorizedExp;
 import deim.urv.cat.homework2.model.Topic;
+import jakarta.ws.rs.client.Entity;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import deim.urv.cat.homework2.controller.FilterForm;
-import deim.urv.cat.homework2.controller.UserForm;
-import jakarta.ws.rs.client.Entity;
-import java.util.stream.Collectors;
 
 public class ArticleServiceImpl implements ArticleService {
     
