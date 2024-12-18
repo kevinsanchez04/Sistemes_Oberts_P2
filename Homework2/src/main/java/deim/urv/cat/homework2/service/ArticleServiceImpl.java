@@ -8,13 +8,21 @@ import deim.urv.cat.homework2.controller.FilterForm;
 import deim.urv.cat.homework2.model.ArticleDTO;
 import deim.urv.cat.homework2.model.ArticleGQ;
 import deim.urv.cat.homework2.model.Topic;
+import jakarta.inject.Inject;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.ws.rs.client.Entity;
+import static jakarta.ws.rs.client.Entity.text;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import java.util.Base64;
 
 public class ArticleServiceImpl implements ArticleService {
+    
+    @Inject HttpServletRequest request;
     
     private final WebTarget webTarget;
     private final jakarta.ws.rs.client.Client client;
@@ -45,8 +53,10 @@ public class ArticleServiceImpl implements ArticleService {
     
     @Override
     public ArticleDTO findId(Long id) throws NullPointerException{
-        Response response = webTarget.path(id.toString())
+        Response response = webTarget
+                .path(id.toString())
                 .request(MediaType.APPLICATION_JSON)
+                .header(HttpHeaders.AUTHORIZATION, code())
                 .get();
         if (response.getStatus() == 200) {
             return response.readEntity(ArticleDTO.class);
@@ -59,8 +69,18 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public boolean newArticle(ArticleForm art) throws UnauthorizedExp{
         Response response = webTarget.request(MediaType.APPLICATION_JSON)
+               .header(HttpHeaders.AUTHORIZATION, code())
                .post(Entity.entity(art, MediaType.APPLICATION_JSON), 
                     Response.class);
         return response.getStatus() == 201;
+    }
+    
+    public String code(){
+        HttpSession session = request.getSession(false);
+        String username = (String) session.getAttribute("username");
+        String password = (String) session.getAttribute("password");
+        String unified = username+":"+password;
+        String encodedText = "Basic " +Base64.getEncoder().encodeToString(unified.getBytes());
+        return encodedText;
     }
 }
