@@ -40,7 +40,7 @@ public class ArticleForm {
     @FormParam("imatge")
     @MvcBinding
     @NotBlank
-    @Size(min=2, max=1024, message = "Image must be between 2 and 1024 characters")
+    @Size(max=1024, message = "Image must be between 2 and 1024 characters")
     private String imatge;
     
     @FormParam("topics")
