@@ -1,23 +1,26 @@
 package deim.urv.cat.homework2.controller;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import deim.urv.cat.homework2.UnauthorizedExp;
 import deim.urv.cat.homework2.model.AlertMessage;
 import deim.urv.cat.homework2.model.ArticleDTO;
 import deim.urv.cat.homework2.service.ArticleService;
-import deim.urv.cat.homework2.UnauthorizedExp;
 import jakarta.inject.Inject;
 import jakarta.mvc.Controller;
 import jakarta.mvc.Models;
 import jakarta.mvc.UriRef;
 import jakarta.mvc.binding.BindingResult;
 import jakarta.mvc.binding.ParamError;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.BeanParam;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @Controller
 @Path("Article")
@@ -27,6 +30,7 @@ public class ArticleController {
     @Inject ArticleService service;
     @Inject Models models;
     @Inject Logger log;
+    @Inject HttpServletRequest request;
     
     @GET
     public String showAll() {
@@ -62,7 +66,13 @@ public class ArticleController {
     @Path("/addArticle")
     @UriRef("addArticle")
     public String addArticle() {
-        return "articleform.jsp"; // Injects CRSF token
+
+        HttpSession session = request.getSession(false);
+        if(session.getAttribute("username") == null){
+            return "redirect:/LogIn/-1"; // -1 Long vol dir que es per afegir article / Decisio de disseny /
+        } 
+
+        return "articleform.jsp"; 
     }
     
     @POST
@@ -81,5 +91,6 @@ public class ArticleController {
         }
         models.put("articles",service.findAll(null));
         return "articles.jsp";
+
     }
 }
