@@ -1,0 +1,6 @@
+# Ignore class
+*.class
+*.xml
+*.propierties
+*.war
+*.lst
