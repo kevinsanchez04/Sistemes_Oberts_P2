@@ -60,11 +60,11 @@
                                 <div class="card-body pt-0 pb-3 pr-3 pl-3">
                                     <h5 class="card-title">${art.titol}</h5>
                                     <p class="card-text">${art.resum}</p>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="d-flex justify-content-center align-items-center mb-2">
+                                    <div class="d-flex justify-content-between" style="text-decoration: none;">
+                                        <a class="d-flex" href="./autor">
                                           <img style="height:2rem; aspect-ratio: 1; object-fit: cover;" class="img-fluid rounded-circle me-3" src="https://static.vecteezy.com/system/resources/previews/001/131/187/large_2x/serious-man-portrait-real-people-high-definition-grey-background-photo.jpg" alt="Imagen Autor">
                                           <p class="text-center mb-0">${art.autor}</p>
-                                        </div>
+                                        </a>
                                         <div class="d-flex justify-content-between">
                                           <div class="d-flex me-3">
                                             <c:if test="${art.privacitat == true}">
