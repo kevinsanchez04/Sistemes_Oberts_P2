@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
                                 </a>
-                                <a type="button" href="lamamas" class="btn btn-dark">
+                                <a type="button" href="${pageContext.request.contextPath}/Web/Article/Delete/${art.id}" class="btn btn-dark">
                                   DELETE
                                 </a>
                             </div>
