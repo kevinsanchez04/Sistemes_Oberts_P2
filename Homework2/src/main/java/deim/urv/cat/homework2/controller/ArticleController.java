@@ -91,6 +91,8 @@ public class ArticleController {
     @POST
     @UriRef("/insert")
     public String filter(@Valid @BeanParam ArticleForm article){
+        HttpSession session = request.getSession(false);
+        article.setAutor((String)session.getAttribute("username"));
         try{
             if (!service.newArticle(article) && bindingResult.isFailed()) {
                 AlertMessage alert = AlertMessage.danger("Validation failed!");
