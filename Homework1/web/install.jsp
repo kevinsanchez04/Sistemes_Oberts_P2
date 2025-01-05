@@ -39,7 +39,7 @@
                 "INSERT INTO " + schema + ".CUSTOMER (id, credentials, dataCreacio, description, profilePhoto) VALUES (NEXT VALUE FOR CUSTOMER_GEN, (SELECT MAX(id) FROM " + schema + ".CREDENTIALS), '2024-11-22', 'Hola breu descripció', 'https://okdiario.com/img/2024/08/13/get-635x358.jpg')",
 
                 "INSERT INTO " + schema + ".ARTICLE (ID, autor_id, titol, data, resum, text, visualitzacions,imatge) "
-                    + "VALUES (NEXT VALUE FOR ARTICLE_GEN, 1, 'NomArticle', '2024-11-12', 'Resum de 20 paraules', 'Tenim el seguent text que es de prova i nomes per veure que install jsp funciona a la perfeccio', 5000,'C:\\Iulian\\image.png')",
+                    + "VALUES (NEXT VALUE FOR ARTICLE_GEN, 1, 'NomArticle', '2024-11-12', 'Resum de 20 paraules', 'Tenim el seguent text que es de prova i nomes per veure que install jsp funciona a la perfeccio', 5000,'https://img.freepik.com/vector-gratis/ilustracion-almacenamiento-nube_53876-20605.jpg?w=2000')",
                 "INSERT INTO " + schema + ".ARTICLE_TOPICS (article_id, topics) VALUES (1, 'CSS')",
                 "INSERT INTO " + schema + ".ARTICLE_TOPICS (article_id, topics) VALUES (1, 'Python')",
                 
@@ -47,7 +47,7 @@
                 "INSERT INTO " + schema + ".CREDENTIALS VALUES (NEXT VALUE FOR CREDENTIALS_GEN, 'kevin', 'kevin2004')",
                 "INSERT INTO " + schema + ".CUSTOMER (id, credentials, dataCreacio, description, profilePhoto) VALUES (NEXT VALUE FOR CUSTOMER_GEN, (SELECT MAX(id) FROM " + schema + ".CREDENTIALS), '2024-11-22', 'Hola breu descripció', 'https://okdiario.com/img/2024/08/13/get-635x358.jpg')",
                 "INSERT INTO " + schema + ".ARTICLE (ID, privacitat, titol, resum, text, data, imatge, autor_id, visualitzacions) "
-                    + "VALUES (NEXT VALUE FOR ARTICLE_GEN, 1, 'Article 2', 'Resum ART 2', 'Text del Article numero 2', '2024-01-22', 'C:\\Users\\iulia\\Downloads\\imatge.png', (SELECT MAX(id) FROM " + schema + ".CUSTOMER), 300)",
+                    + "VALUES (NEXT VALUE FOR ARTICLE_GEN, 1, 'Article 2', 'Resum ART 2', 'Text del Article numero 2', '2024-01-22', 'https://th.bing.com/th/id/R.ec3075b626306f0dc1ee583d558a608d?rik=8k1p%2bhUpP8wreA&pid=ImgRaw&r=0&sres=1&sresct=1', (SELECT MAX(id) FROM " + schema + ".CUSTOMER), 300)",
                 "INSERT INTO " + schema + ".ARTICLE_TOPICS (article_id, topics) VALUES (2, 'HTML')",
                 "INSERT INTO " + schema + ".ARTICLE_TOPICS (article_id, topics) VALUES (2, 'JavaScript')",
 

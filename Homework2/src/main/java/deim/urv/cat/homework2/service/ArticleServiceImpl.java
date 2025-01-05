@@ -2,7 +2,7 @@ package deim.urv.cat.homework2.service;
 
 import java.util.List;
 
-import deim.urv.cat.homework2.UnauthorizedExp;
+import deim.urv.cat.homework2.exception.UnauthorizedExp;
 import deim.urv.cat.homework2.controller.ArticleForm;
 import deim.urv.cat.homework2.controller.FilterForm;
 import deim.urv.cat.homework2.model.ArticleDTO;
@@ -12,7 +12,6 @@ import jakarta.inject.Inject;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.ws.rs.client.Entity;
-import static jakarta.ws.rs.client.Entity.text;
 import jakarta.ws.rs.client.WebTarget;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.HttpHeaders;
@@ -64,6 +63,16 @@ public class ArticleServiceImpl implements ArticleService {
             throw new NullPointerException();
         }
         return null;
+    }
+    
+    @Override
+    public boolean delete(Long id){
+        Response response = webTarget
+                .path(id.toString())
+                .request(MediaType.APPLICATION_JSON)
+                .header(HttpHeaders.AUTHORIZATION, code())
+                .delete();
+        return response.getStatus() == 202;
     }
     
     @Override

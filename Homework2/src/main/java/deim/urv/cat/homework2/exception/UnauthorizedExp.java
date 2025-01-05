@@ -1,4 +1,4 @@
-package deim.urv.cat.homework2;
+package deim.urv.cat.homework2.exception;
 
 public class UnauthorizedExp extends Exception {
     public UnauthorizedExp(){
