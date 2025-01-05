@@ -4,7 +4,6 @@
  */
 package deim.urv.cat.homework2.service;
 
-import deim.urv.cat.homework2.UnauthorizedExp;
 import deim.urv.cat.homework2.controller.CustomerForm;
 import deim.urv.cat.homework2.model.Customer;
 import deim.urv.cat.homework2.model.CustomerDTO;
@@ -76,18 +75,26 @@ public boolean putCustomer(CustomerForm cust) {
         System.err.println("Customer not found for username: " + username);
         return false;
     }
-    Customer aux = new Customer();
-    aux.setId(c.getId());
-    aux.setPassword(cust.getPassword());
-    aux.setDescription(cust.getDescription());
-    aux.setProfilePhoto(cust.getProfilePhoto());
-    aux.setUsername(cust.getUsername());
-        System.out.println("Dades de l'usuari nou:"+aux.getDescription()+" "+aux.getUsername()+" "+aux.getPassword());
+    System.out.print("Dades de l'usuari c: "+c.getDescription()+" "+c.getUsername()+" "+c.getPassword() +" "+ c.getProfilePhoto());
+    if (cust.getPassword() != null && !cust.getPassword().isBlank()) {
+    c.setPassword(cust.getPassword());
+    }
+    if (cust.getDescription() != null && !cust.getDescription().isBlank()) {
+        c.setDescription(cust.getDescription());
+    }
+    if (cust.getProfilePhoto() != null && !cust.getProfilePhoto().isBlank()) {
+        c.setProfilePhoto(cust.getProfilePhoto());
+    }
+    if (cust.getUsername() != null && !cust.getUsername().isBlank()) {
+        c.setUsername(cust.getUsername());
+}
+
+        System.out.println("Dades de l'usuari nou:"+c.getDescription()+" "+c.getUsername()+" "+c.getPassword()+" "+c.getProfilePhoto());
     Response response = webTarget
-            .path("/"+aux.getId())
+            .path("/"+c.getId())
             .request(MediaType.APPLICATION_JSON)
             .header(HttpHeaders.AUTHORIZATION, code())
-            .put(Entity.entity(aux, MediaType.APPLICATION_JSON));
+            .put(Entity.entity(c, MediaType.APPLICATION_JSON));
     System.out.println("Response status: " + response.getStatus());
     if (response.getStatus() != 200) {
         System.err.println("Error updating customer: " + response.readEntity(String.class));

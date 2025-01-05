@@ -3,7 +3,6 @@ package deim.urv.cat.homework2.controller;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import deim.urv.cat.homework2.UnauthorizedExp;
 import deim.urv.cat.homework2.model.AlertMessage;
 import deim.urv.cat.homework2.model.Customer;
 import deim.urv.cat.homework2.model.CustomerDTO;
@@ -122,29 +121,6 @@ public class CustomerController {
             return "customerform.jsp";
         }  
     }
-    /*@POST
-    @UriRef("editCustomerProfile")
-    @Path("EditProfile")
-    public String putCustomer(@Valid @BeanParam CustomerForm customer) {
-        if (service.putCustomer(customer)) {
-            if (bindingResult.isFailed()) {
-                AlertMessage alert = AlertMessage.danger("Format de dades incorrecte!");
-                bindingResult.getAllErrors().forEach((ParamError t) -> {
-                    alert.addError(t.getParamName(), "", t.getMessage());
-                });
-                log.log(Level.WARNING, "Data binding for customerForm failed.");
-                models.put("errors", alert);
-                return "customerform.jsp";
-            }
-            AlertMessage alert2 = AlertMessage.success("S'han actualitzat correctament les dades");
-            models.put("ok", alert2);
-            return "customerform.jsp";
-        } else {
-            AlertMessage alert1 = AlertMessage.danger("Estas intentant modificar dades que no son teves!");
-            models.put("errors", alert1);
-            return "customerform.jsp";
-        }
-    }*/
 
         
 }

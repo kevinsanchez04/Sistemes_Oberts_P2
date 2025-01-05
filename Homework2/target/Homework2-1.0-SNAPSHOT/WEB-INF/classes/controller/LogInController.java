@@ -39,7 +39,14 @@ public class LogInController {
         if(log.getId() == 0) return "redirect:Article";
         if(log.getId() == -1) return "redirect:Article/addArticle";
         if(log.getId() == -3) return "redirect:Customer/Profile";
+        if(log.getId() < -2) return "redirect:Article/Delete/"+valor(log.getId());
         return "redirect:/Article/"+log.getId();
+    }
+    
+    private String valor(Long id){
+        Long ids = Math.abs(id);
+        String val = id.toString();
+        return val.substring(2);
     }
     
     private boolean validar(LogInForm log){

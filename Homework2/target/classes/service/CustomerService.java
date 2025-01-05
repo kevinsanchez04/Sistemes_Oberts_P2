@@ -4,7 +4,6 @@
  */
 package deim.urv.cat.homework2.service;
 
-import deim.urv.cat.homework2.UnauthorizedExp;
 import deim.urv.cat.homework2.controller.CustomerForm;
 import deim.urv.cat.homework2.model.CustomerDTO;
 import deim.urv.cat.homework2.model.Customer;

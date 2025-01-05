@@ -20,9 +20,9 @@ deim\urv\cat\homework2\Property.class
 deim\urv\cat\homework2\model\ArticleGQ.class
 deim\urv\cat\homework2\service\ArticleServiceImpl$1.class
 deim\urv\cat\homework2\controller\LogoutController.class
-deim\urv\cat\homework2\UnauthorizedExp.class
 deim\urv\cat\homework2\controller\UserForm.class
 deim\urv\cat\homework2\model\ArticleDTO.class
+deim\urv\cat\homework2\exception\UnauthorizedExp.class
 deim\urv\cat\homework2\exception\PropertyException.class
 deim\urv\cat\homework2\model\Topic.class
 deim\urv\cat\homework2\controller\FilterForm.class

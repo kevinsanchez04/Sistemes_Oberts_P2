@@ -53,8 +53,8 @@
                         </section>
                         <!-- Username -->
                         <section class="d-flex flex-column mt-3">
-                            <label for="HTML" class="mb-0">Username</label>
-                            <input type="text" name="autor" class="border border-2 border-dark rounded">
+                            <!--<label for="HTML" class="mb-0">Username</label>-->
+                            <input type="hidden" value="" name="autor" class="border border-2 border-dark rounded">
                         </section>
                         <!-- Imatge -->
                         <section class="d-flex flex-column mt-3">

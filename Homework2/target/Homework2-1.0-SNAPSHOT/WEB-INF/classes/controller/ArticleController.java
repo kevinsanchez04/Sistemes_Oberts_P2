@@ -3,7 +3,7 @@ package deim.urv.cat.homework2.controller;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import deim.urv.cat.homework2.UnauthorizedExp;
+import deim.urv.cat.homework2.exception.UnauthorizedExp;
 import deim.urv.cat.homework2.model.AlertMessage;
 import deim.urv.cat.homework2.model.ArticleDTO;
 import deim.urv.cat.homework2.service.ArticleService;
@@ -53,6 +53,21 @@ public class ArticleController {
             return "articles.jsp";
         }
     }
+
+    @GET
+    @Path("Delete/{id}")
+    public String deleteMethod(@PathParam("id") Long id){
+        HttpSession session = request.getSession(false);
+        if(session.getAttribute("username") == null){
+            return "redirect:/LogIn/-2"+id; // -2 Long vol dir que es per borrar / Decisio de disseny /
+        } 
+        
+        if(!service.delete(id)){
+            models.put("message", "You are not the author of this article");
+        }
+        models.put("articles",service.findAll(null));
+        return "articles.jsp";
+    }
     
     @GET
     @Path("/filter")
@@ -66,31 +81,34 @@ public class ArticleController {
     @Path("/addArticle")
     @UriRef("addArticle")
     public String addArticle() {
-
         HttpSession session = request.getSession(false);
         if(session.getAttribute("username") == null){
             return "redirect:/LogIn/-1"; // -1 Long vol dir que es per afegir article / Decisio de disseny /
         } 
-
         return "articleform.jsp"; 
     }
     
     @POST
     @UriRef("/insert")
-    public String filter(@Valid @BeanParam ArticleForm article) throws UnauthorizedExp {
-        if (!service.newArticle(article) && bindingResult.isFailed()) {
-            AlertMessage alert = AlertMessage.danger("Validation failed!");
-            bindingResult.getAllErrors()
-                    .stream()
-                    .forEach((ParamError t) -> {
-                        alert.addError(t.getParamName(), "", t.getMessage());
-                    });
-            log.log(Level.WARNING, "Data binding for signupFormController failed.");
-            models.put("errors", alert);
-            return "articleform.jsp";
+    public String filter(@Valid @BeanParam ArticleForm article){
+        HttpSession session = request.getSession(false);
+        article.setAutor((String)session.getAttribute("username"));
+        try{
+            if (!service.newArticle(article) && bindingResult.isFailed()) {
+                AlertMessage alert = AlertMessage.danger("Validation failed!");
+                bindingResult.getAllErrors()
+                        .stream()
+                        .forEach((ParamError t) -> {
+                            alert.addError(t.getParamName(), "", t.getMessage());
+                        });
+                log.log(Level.WARNING, "Data binding for signupFormController failed.");
+                models.put("errors", alert);
+                return "articleform.jsp";
+            }
+        }catch(UnauthorizedExp e){
+             models.put("message", "You are not Authorized to insert");
         }
         models.put("articles",service.findAll(null));
         return "articles.jsp";
-
     }
 }
