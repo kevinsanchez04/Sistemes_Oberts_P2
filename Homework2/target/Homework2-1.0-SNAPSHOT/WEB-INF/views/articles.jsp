@@ -30,7 +30,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
         <jsp:include page="/WEB-INF/views/layout/nav.jsp" />
         
         <button class="btn btn-dark w-100 rounded-bottom text-white" href="#" data-bs-toggle="offcanvas" data-bs-target="#filtre" style="font-family:'Parkinsans'">Filtre</button>

@@ -32,9 +32,15 @@
         </style>
         
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
         <jsp:include page="/WEB-INF/views/layout/nav.jsp" />
         
+        <c:if test="${not empty errorMessage}">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>${errorMessage}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </c:if>
         <h2 class="text-center m-0 mt-3">Login with your Account</h2>
         <form action="${pageContext.request.contextPath}/Web/LogIn/article" method="GET" class="d-flex flex-column align-items-center justify-content-center">
           <div class="w-75 m-3 d-flex align-items-center border border-dark rounded bg-dark text-white">
@@ -51,6 +57,7 @@
         
         <footer class="fixed-bottom">
             <jsp:include page="/WEB-INF/views/layout/footer.jsp"/>
-        </footer>      
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>

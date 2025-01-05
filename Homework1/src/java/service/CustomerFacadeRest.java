@@ -106,6 +106,22 @@ public class CustomerFacadeRest extends AbstractFacade<Customer>{
             }   
             
     }
+    
+    @GET
+    @Path("name/{name}")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response findCustomerName(@PathParam("name") String name){
+        String query = "Select c FROM Customer c WHERE c.credentials.username = :userName";
+        try{
+            Customer c = em.createQuery(query,Customer.class)
+                    .setParameter("userName",name)
+                    .getSingleResult();
+            return Response.ok(c.copia()).build();
+        }catch(Exception e){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+    }
+    
     /*Funció auxiliar per comprovar si les credencials correponen a l'usuari que volem modificar*/
     public boolean comprovarCredencials(Customer c, Credentials cs){
         return((c.getCredentials().getUsername().compareTo(cs.getUsername())) == 0 && 
