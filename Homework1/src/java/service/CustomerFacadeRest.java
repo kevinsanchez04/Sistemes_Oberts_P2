@@ -67,6 +67,15 @@ public class CustomerFacadeRest extends AbstractFacade<Customer>{
         
     }
     
+    
+    @GET
+    @Path("/validate")
+    @Secured
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response validate() {
+        return Response.ok().build();
+    }
+    
     @PUT
     @Secured
     @Path("{id}")
