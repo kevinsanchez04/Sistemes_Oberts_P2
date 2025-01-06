@@ -18,6 +18,7 @@ public class ArticleDTO {
     private String text;
     private String data;
     private String imatgeAutor;
+    private Long id;
     
     public ArticleDTO(Article article){
         titol = article.getTitol();
@@ -28,8 +29,19 @@ public class ArticleDTO {
         autor = article.getAutor().getUsername();
         topics = article.getTopics();
         imatgeAutor = article.getAutor().getProfilePhoto();
+        id = article.getId();
     }  
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    
+    
     public String getImatgeAutor() {
         return imatgeAutor;
     }
