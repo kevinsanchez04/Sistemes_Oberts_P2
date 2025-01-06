@@ -91,6 +91,9 @@ public boolean putCustomer(CustomerForm cust) {
 
         System.out.println("Dades de l'usuari nou:"+c.getDescription()+" "+c.getUsername()+" "+c.getPassword()+" "+c.getProfilePhoto());
         System.out.println("Id de l'usuari"+c.getId());
+        System.out.println("Session USERNAME: " + session.getAttribute("username"));
+        System.out.println("Session PASSWORD: " + session.getAttribute("password"));
+
         Response response = webTarget
             .path("/"+c.getId())
             .request(MediaType.APPLICATION_JSON)

@@ -107,12 +107,14 @@ public class CustomerController {
             }
             AlertMessage alert2 = AlertMessage.success("S'han actualitzat correctament les dades");
             HttpSession session = request.getSession(false);
-            if(customer.getUsername() != null) {
+            if(customer.getUsername() != null && !customer.getUsername().isBlank()) {
                 session.setAttribute("username", customer.getUsername());
             }
-            if(customer.getPassword() != null){
+            if(customer.getPassword() != null && !customer.getPassword().isBlank()){
                 session.setAttribute("password", customer.getPassword());
             }
+            System.out.println("FORM USERNAME: "+customer.getUsername()+ "PSW: "+customer.getPassword());
+            System.out.println("SESSION USERNAME: "+session.getAttribute("username")+ "PSW: "+session.getAttribute("password"));
             models.put("ok", alert2);
             return "customerform.jsp";
         }else{
