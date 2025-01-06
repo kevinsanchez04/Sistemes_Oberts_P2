@@ -21,12 +21,13 @@
         <style>
             *{
                 color: black;
+                font-family: 'Parkinsans';
             }
             body{
                 background: lightgray;
             }
-            *{
-              font-family: 'Parkinsans';
+            a{
+                text-decoration: none;
             }
         </style>
     </head>
