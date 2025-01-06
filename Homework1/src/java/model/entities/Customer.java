@@ -191,7 +191,6 @@ public class Customer implements Serializable {
     }
     public Customer copia() {
         Customer c = new Customer();
-        c.setId(id);
         Credentials cds = new Credentials();
         cds.setUsername(credentials.getUsername());
         cds.setId(credentials.getId());
