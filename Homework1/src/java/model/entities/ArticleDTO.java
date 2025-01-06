@@ -1,7 +1,6 @@
 package model.entities;
 
 import jakarta.xml.bind.annotation.XmlRootElement;
-import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -18,6 +17,7 @@ public class ArticleDTO {
     private List<Topic> topics;
     private String text;
     private String data;
+    private String imatgeAutor;
     
     public ArticleDTO(Article article){
         titol = article.getTitol();
@@ -27,7 +27,16 @@ public class ArticleDTO {
         imatge = article.getImatge();
         autor = article.getAutor().getUsername();
         topics = article.getTopics();
+        imatgeAutor = article.getAutor().getProfilePhoto();
     }  
+
+    public String getImatgeAutor() {
+        return imatgeAutor;
+    }
+
+    public void setImatgeAutor(String imatgeAutor) {
+        this.imatgeAutor = imatgeAutor;
+    }
     
     public ArticleDTO(){
         
