@@ -90,7 +90,8 @@ public boolean putCustomer(CustomerForm cust) {
 }
 
         System.out.println("Dades de l'usuari nou:"+c.getDescription()+" "+c.getUsername()+" "+c.getPassword()+" "+c.getProfilePhoto());
-    Response response = webTarget
+        System.out.println("Id de l'usuari"+c.getId());
+        Response response = webTarget
             .path("/"+c.getId())
             .request(MediaType.APPLICATION_JSON)
             .header(HttpHeaders.AUTHORIZATION, code())

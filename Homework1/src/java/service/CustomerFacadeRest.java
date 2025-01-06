@@ -68,14 +68,6 @@ public class CustomerFacadeRest extends AbstractFacade<Customer>{
     }
     
     
-    @GET
-    @Path("/validate")
-    @Secured
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Response validate() {
-        return Response.ok().build();
-    }
-    
     @PUT
     @Secured
     @Path("{id}")
@@ -129,6 +121,13 @@ public class CustomerFacadeRest extends AbstractFacade<Customer>{
         }catch(Exception e){
             return Response.status(Response.Status.NOT_FOUND).build();
         }
+    }
+    @GET
+    @Path("/validate")
+    @Secured
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response validate() {
+        return Response.ok().build();
     }
     
     /*Funció auxiliar per comprovar si les credencials correponen a l'usuari que volem modificar*/

@@ -23,6 +23,7 @@ public class LogInController {
     @GET
     @Path("/{id}")
     public String show(@PathParam("id") Long id){
+        models.put("message", null);
         models.put("valor",id);
         return "login.jsp";
     }
@@ -31,7 +32,7 @@ public class LogInController {
     @Path("/article")
     public String goToArticle(@Valid @BeanParam LogInForm log){
         if(!validar(log)){
-            models.put("errorMessage", "Usuari o contrasenya incorrectes!"); 
+            models.put("errorMessage", "Username or password incorrect");
             models.put("valor", log.getId());
             return "login.jsp";
         } 
@@ -55,8 +56,7 @@ public class LogInController {
         HttpSession session = request.getSession(true); //Creem una sessió en los camps indicats per l'usuari
         session.setAttribute("username",username); 
         session.setAttribute("password",password);
-        CustomerForm cust = new CustomerForm(); //Farem servir una peticio put sense valors, per comprovar si les credencials son correctes de l'usuari
-        if(!service.putCustomer(cust)){
+        if(!service.validate()){
             session.invalidate();
             return false;
         }

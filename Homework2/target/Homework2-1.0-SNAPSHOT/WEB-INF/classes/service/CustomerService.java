@@ -18,4 +18,5 @@ public interface CustomerService {
     Customer findId(Long id);
     boolean putCustomer(CustomerForm cust);
     Customer findName(String name);
+    boolean validate();
 }

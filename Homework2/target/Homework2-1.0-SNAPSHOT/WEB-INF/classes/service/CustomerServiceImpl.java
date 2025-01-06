@@ -90,7 +90,8 @@ public boolean putCustomer(CustomerForm cust) {
 }
 
         System.out.println("Dades de l'usuari nou:"+c.getDescription()+" "+c.getUsername()+" "+c.getPassword()+" "+c.getProfilePhoto());
-    Response response = webTarget
+        System.out.println("Id de l'usuari"+c.getId());
+        Response response = webTarget
             .path("/"+c.getId())
             .request(MediaType.APPLICATION_JSON)
             .header(HttpHeaders.AUTHORIZATION, code())
@@ -101,6 +102,18 @@ public boolean putCustomer(CustomerForm cust) {
     }
     return (response.getStatus() == 200);
 }
+
+    
+    @Override
+    public boolean validate() {
+        Response response = webTarget
+                            .path("/validate")
+                            .request(MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML)
+                            .header(HttpHeaders.AUTHORIZATION, code())
+                            .get();
+        return (response.getStatus() == 200);
+    }
+    
 
 
     @Override
