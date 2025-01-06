@@ -102,6 +102,18 @@ public boolean putCustomer(CustomerForm cust) {
     return (response.getStatus() == 200);
 }
 
+    
+    @Override
+    public boolean validate() {
+        Response response = webTarget
+                            .path("/validate")
+                            .request(MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML)
+                            .header(HttpHeaders.AUTHORIZATION, code())
+                            .get();
+        return (response.getStatus() == 200);
+    }
+    
+
 
     @Override
     public Customer findName(String name) {
