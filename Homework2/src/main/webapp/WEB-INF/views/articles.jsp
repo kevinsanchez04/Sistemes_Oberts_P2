@@ -61,8 +61,8 @@
                                     <h5 class="card-title">${art.titol}</h5>
                                     <p class="card-text">${art.resum}</p>
                                     <div class="d-flex justify-content-between" style="text-decoration: none;">
-                                        <a class="d-flex" href="./autor">
-                                          <img style="height:2rem; aspect-ratio: 1; object-fit: cover;" class="img-fluid rounded-circle me-3" src="https://static.vecteezy.com/system/resources/previews/001/131/187/large_2x/serious-man-portrait-real-people-high-definition-grey-background-photo.jpg" alt="Imagen Autor">
+                                        <a class="d-flex" href="${pageContext.request.contextPath}/Web/Customer/name/${art.autor}">
+                                          <img style="height:2rem; aspect-ratio: 1; object-fit: cover;" class="img-fluid rounded-circle me-3" src="${art.imatgeAutor}" alt="Imagen Autor">
                                           <p class="text-center mb-0">${art.autor}</p>
                                         </a>
                                         <div class="d-flex justify-content-between">
