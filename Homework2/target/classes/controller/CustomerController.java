@@ -113,8 +113,6 @@ public class CustomerController {
             if(customer.getPassword() != null && !customer.getPassword().isBlank()){
                 session.setAttribute("password", customer.getPassword());
             }
-            System.out.println("FORM USERNAME: "+customer.getUsername()+ "PSW: "+customer.getPassword());
-            System.out.println("SESSION USERNAME: "+session.getAttribute("username")+ "PSW: "+session.getAttribute("password"));
             models.put("ok", alert2);
             return "customerform.jsp";
         }else{

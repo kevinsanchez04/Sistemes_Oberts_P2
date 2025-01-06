@@ -48,26 +48,30 @@
                     <p class="card-text mb-3">Data creacio: ${customer.dataCreacio}</p>
                     <p class="card-text mb-3">Tipus d'usuari: ${customer.tipusUsuari}</p>
                     <p class="card-text mb-3">Id usuari: ${customer.id}</p>
-                    <a class="btn btn-primary mt-3" href="#article${customer.links.id}">Ultim article publicat</a>
+                    <c:if test="${customer.author}">
+                             <a class="btn btn-primary mt-3" href="#article${customer.links.id}">Ultim article publicat</a>
+                    </c:if>
                 </div>
             </div>    
-            <h3 class="text-center mb-4 border border-dark border-5 p-4 m-4">Llistat d'articles</h3>    
-            <div class="row">
-                    <div class="col-12">
-                        <c:forEach var="article" items="${customer.articles}">
-                            <a id="article${article.id}" href="/Homework2/Web/Article/${article.id}" class="card bg-secondary text-white mb-4 shadow-sm text-decoration-none">
-                                <img class="card-img-top" style="height: 15rem; object-fit: cover;" src="${article.imatge}" alt="Imagen Articulo">
-                                <div class="card-body text-center">
-                                    <h2 class="card-title">${article.titol}</h2>
-                                    <p class="text-light">Data creacio: ${article.data}</p>
-                                    <p class="card-text">${article.resum}</p>
-                                    <p class="card-text">Visualitacions: ${article.visualitzacions}</p>
-                                    <p>Topics: ${article.topics}</p>                                    
-                                </div>
-                            </a>
-                        </c:forEach>
-                    </div>
-            </div>
+            <c:if test="${customer.author}">
+                <h3 class="text-center mb-4 border border-dark border-5 p-4 m-4">Llistat d'articles</h3>    
+                <div class="row">
+                        <div class="col-12">
+                            <c:forEach var="article" items="${customer.articles}">
+                                <a id="article${article.id}" href="/Homework2/Web/Article/${article.id}" class="card bg-secondary text-white mb-4 shadow-sm text-decoration-none">
+                                    <img class="card-img-top" style="height: 15rem; object-fit: cover;" src="${article.imatge}" alt="Imagen Articulo">
+                                    <div class="card-body text-center">
+                                        <h2 class="card-title">${article.titol}</h2>
+                                        <p class="text-light">Data creacio: ${article.data}</p>
+                                        <p class="card-text">${article.resum}</p>
+                                        <p class="card-text">Visualitacions: ${article.visualitzacions}</p>
+                                        <p>Topics: ${article.topics}</p>                                    
+                                    </div>
+                                </a>
+                            </c:forEach>
+                        </div>
+                </div>
+            </c:if>
         </div>
         <jsp:include page="/WEB-INF/views/layout/footer.jsp" />
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNrsmb2Y0XOA7fB0zjUJflR2I6GaHq9lQ+jaW17dSJrBoXwE4Xj5gZj7rFuPv67" crossorigin="anonymous"></script>

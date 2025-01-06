@@ -63,7 +63,6 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
 public boolean putCustomer(CustomerForm cust) {
-    System.out.println("Dades del formulari:"+cust.getUsername()+" "+cust.getPassword()+" "+cust.getProfilePhoto()+" "+cust.getDescription());
     HttpSession session = request.getSession(false);
     String username = (String) session.getAttribute("username");
     if (username == null) {
@@ -75,7 +74,6 @@ public boolean putCustomer(CustomerForm cust) {
         System.err.println("Customer not found for username: " + username);
         return false;
     }
-    System.out.print("Dades de l'usuari c: "+c.getDescription()+" "+c.getUsername()+" "+c.getPassword() +" "+ c.getProfilePhoto());
     if (cust.getPassword() != null && !cust.getPassword().isBlank()) {
     c.setPassword(cust.getPassword());
     }
@@ -88,11 +86,6 @@ public boolean putCustomer(CustomerForm cust) {
     if (cust.getUsername() != null && !cust.getUsername().isBlank()) {
         c.setUsername(cust.getUsername());
 }
-
-        System.out.println("Dades de l'usuari nou:"+c.getDescription()+" "+c.getUsername()+" "+c.getPassword()+" "+c.getProfilePhoto());
-        System.out.println("Id de l'usuari"+c.getId());
-        System.out.println("Session USERNAME: " + session.getAttribute("username"));
-        System.out.println("Session PASSWORD: " + session.getAttribute("password"));
 
         Response response = webTarget
             .path("/"+c.getId())
