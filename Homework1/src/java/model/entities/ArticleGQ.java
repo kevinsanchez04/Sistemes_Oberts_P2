@@ -1,7 +1,6 @@
 package model.entities;
 
 import jakarta.xml.bind.annotation.XmlRootElement;
-import java.time.LocalDate;
 
 /**
  *
@@ -18,6 +17,7 @@ public class ArticleGQ {
     private String autor;
     private boolean privacitat;
     private Long id;
+    private String imatgeAutor;
     
     public ArticleGQ(Article article){
         titol = article.getTitol();
@@ -28,6 +28,7 @@ public class ArticleGQ {
         autor = article.getAutor().getUsername();
         privacitat = article.isPrivacitat();
         id = article.getId();
+        imatgeAutor = article.getAutor().getProfilePhoto();
     }  
     
     public ArticleGQ(){
@@ -97,4 +98,13 @@ public class ArticleGQ {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getImatgeAutor() {
+        return imatgeAutor;
+    }
+
+    public void setImatgeAutor(String imatgeAutor) {
+        this.imatgeAutor = imatgeAutor;
+    }
+        
 }
