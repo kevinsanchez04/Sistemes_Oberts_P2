@@ -44,15 +44,14 @@
                 <jsp:include page="/WEB-INF/views/layout/form.jsp" />
             </div>
         </div>
-        <jsp:include page="/WEB-INF/views/layout/hello.jsp" />
-            
+        
         <c:if test="${not empty message}">
             <div class="alert alert-danger" role="alert">
                 ${message}        
             </div>
         </c:if> 
-                    
         <div class="container-fluid">
+            <jsp:include page="/WEB-INF/views/layout/hello.jsp"/>
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-xl-2 row-cols-xxl-3">
                 <c:forEach var="art" items="${articles}">
                         <div class="col pt-3">
