@@ -18,11 +18,29 @@ public class ArticleDTO {
     private List<Topic> topics;
     private String text;
     private String data;
+    private String imatgeAutor;
+    private Long id;
   
     public ArticleDTO(){
         
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
+    public String getImatgeAutor() {
+        return imatgeAutor;
+    }
+
+    public void setImatgeAutor(String imatgeAutor) {
+        this.imatgeAutor = imatgeAutor;
+    }
+    
     public String getTitol() {
         return titol;
     }

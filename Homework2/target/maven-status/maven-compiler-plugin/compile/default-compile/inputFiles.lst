@@ -1,6 +1,4 @@
-C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\service\UserServiceImpl.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\controller\ArticleController.java
-C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\controller\UserForm.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\exception\PropertyException.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\model\Credentials.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\service\ArticleService.java
@@ -14,8 +12,6 @@ C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\controller\CustomerController.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\Config.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\model\ArticleGQ.java
-C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\model\SignUpAttempts.java
-C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\model\User.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\model\Topic.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\JakartaRestConfiguration.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\resources\JakartaEE9Resource.java
@@ -23,9 +19,6 @@ C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\controller\LogInForm.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\MvcEventListener.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\exception\UnauthorizedExp.java
-C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\service\UserService.java
-C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\controller\LogoutController.java
-C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\model\ArticleIN.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\model\Customer.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\Resources.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\model\CustomerDTO.java
@@ -33,5 +26,4 @@ C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\controller\CustomerForm.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\service\CustomerServiceImpl.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\model\Links.java
-C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\controller\SignUpFormController.java
 C:\Users\Kevin\Documents\GitHub\Sistemes_Oberts_P2\Homework2\src\main\java\deim\urv\cat\homework2\PropertyProducer.java

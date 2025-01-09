@@ -62,4 +62,12 @@ public class LogInController {
         }
         return true;
     }
+        
+    @GET
+    @Path("/Invalidate")
+    public String invalidate(){
+        HttpSession session = request.getSession(false);
+        session.invalidate();
+        return "redirect:Article";
+    }
 }

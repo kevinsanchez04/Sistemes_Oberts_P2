@@ -36,15 +36,6 @@ public class Article {
         this.autor = autor;
         autor.addArticle(this);
     }
-
-    public Article(ArticleIN art){
-        this.privacitat = art.isPrivacitat();
-        this.titol = art.getTitol();
-        this.text = art.getText();
-        this.resum = art.getResum();
-        this.imatge = art.getImatge();
-        this.topics = art.getTopics();
-    }
     
     public Article() {
     }

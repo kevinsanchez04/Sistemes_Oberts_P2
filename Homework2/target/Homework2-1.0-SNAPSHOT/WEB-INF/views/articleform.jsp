@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Articles</title>
+        <title>Article Form</title>
+        <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/002/206/011/original/article-icon-free-vector.jpg">
         <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -50,11 +51,6 @@
                         <section class="d-flex flex-column mt-3">
                             <label for="HTML" class="mb-0">Resum</label>
                             <textarea type="text" name="resum" rows="2" class="border border-2 border-dark rounded"></textarea>
-                        </section>
-                        <!-- Username -->
-                        <section class="d-flex flex-column mt-3">
-                            <!--<label for="HTML" class="mb-0">Username</label>-->
-                            <input type="hidden" value="" name="autor" class="border border-2 border-dark rounded">
                         </section>
                         <!-- Imatge -->
                         <section class="d-flex flex-column mt-3">

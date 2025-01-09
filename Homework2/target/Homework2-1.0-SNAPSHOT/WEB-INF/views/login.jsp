@@ -1,15 +1,10 @@
-<%-- 
-    Document   : article.jsp
-    Created on : 14 Dec 2024, 17:21:52
-    Author     : iulia
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Article</title>
+        <title>Log In</title>
+        <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/002/206/011/original/article-icon-free-vector.jpg">
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
         <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>

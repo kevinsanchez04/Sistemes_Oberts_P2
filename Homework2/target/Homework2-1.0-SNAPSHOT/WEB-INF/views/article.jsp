@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Article</title>
+        <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/002/206/011/original/article-icon-free-vector.jpg">
         <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -29,6 +30,12 @@
             *{
               font-family: 'Parkinsans';
             }
+            
+            a{
+                text-decoration: none;
+                color : black;
+            }
+            
         </style>
         
     </head>
@@ -41,10 +48,10 @@
                     <h2 class="card-title">${article.titol}</h2>
                     <div class="d-flex justify-content-between">
                         <div class="">
-                          <div class="d-flex justify-content-center align-items-center mb-2">
-                            <img style="height:2rem; aspect-ratio: 1; object-fit: cover;" class="img-fluid rounded-circle me-3" src="https://static.vecteezy.com/system/resources/previews/024/235/245/non_2x/middle-aged-man-business-man-daddy-father-uncle-character-in-cassual-style-flat-cartoon-style-illustration-vector.jpg" alt="Imagen Autor">
+                          <a class="d-flex" href="${pageContext.request.contextPath}/Web/Customer/name/${article.autor}">
+                            <img style="height:2rem; aspect-ratio: 1; object-fit: cover;" class="img-fluid rounded-circle me-3" src="${article.imatgeAutor}" alt="Imagen Autor">
                             <p class="text-center mb-0">${article.autor}</p>
-                          </div>
+                          </a>
                           <div class="d-flex justify-content-between">
                             <div class="d-flex me-3">
                                 <i class="bi bi-eye-fill me-2"></i>
@@ -63,6 +70,9 @@
                     <p class="card-text">
                         ${article.text}
                     </p>
+                    <a type="button" href="${pageContext.request.contextPath}/Web/Article/Delete/${article.id}" class="btn btn-dark w-100">
+                    DELETE
+                    </a>
                 </div>
             </div>
         </div>

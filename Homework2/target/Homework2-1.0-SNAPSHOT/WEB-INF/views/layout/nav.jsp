@@ -25,9 +25,10 @@
             <li class="nav-item me-3">
               <a class="nav-link active" href="${pageContext.request.contextPath}/Web/Customer/Profile">Profile</a>
             </li>
+	    <li class="nav-item me-3">
+              <a class="nav-link active" href="${pageContext.request.contextPath}/Web/LogIn/Invalidate">LogOut</a>
+            </li>
           </ul>
         </div>
     </div>
 </nav>
-   
-             

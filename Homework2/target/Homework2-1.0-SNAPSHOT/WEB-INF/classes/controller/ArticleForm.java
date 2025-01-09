@@ -31,10 +31,6 @@ public class ArticleForm {
     @Size(min=2, max=20, message = "Resum must be between 2 and 20 characters")
     private String resum;
     
-    @FormParam("autor")
-    @MvcBinding
-    @NotBlank
-    @Size(min=2, max=30, message = "username must be between 2 and 30 characters")
     private String autor;
     
     @FormParam("imatge")

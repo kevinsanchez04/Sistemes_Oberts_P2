@@ -19,6 +19,15 @@ public class ArticleGQ {
     private String autor;
     private boolean privacitat;
     private Long id;
+    private String imatgeAutor;
+
+    public String getImatgeAutor() {
+        return imatgeAutor;
+    }
+
+    public void setImatgeAutor(String imatgeAutor) {
+        this.imatgeAutor = imatgeAutor;
+    }
 
     public String getTitol() {
         return titol;
