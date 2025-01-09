@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
-        Benvingut ${sessionScope.username}!
+        Benvingut <a href="${pageContext.request.contextPath}/Web/Customer/Profile" class="alert-link">${sessionScope.username}</a>!
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

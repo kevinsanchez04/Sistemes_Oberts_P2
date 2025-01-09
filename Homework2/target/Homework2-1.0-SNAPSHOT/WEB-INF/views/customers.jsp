@@ -50,7 +50,7 @@
                             </div>
                         </a>
                         <c:if test="${csts.author}">
-                            <a href="Article/${csts.links.id}" class="btn btn-primary mt-2">Link de l'ï¿½ltim article</a>
+                            <a href="Article/${csts.links.id}" class="btn btn-primary mt-2">Link de l'últim article</a>
                         </c:if>
                     </div>
                 </div>

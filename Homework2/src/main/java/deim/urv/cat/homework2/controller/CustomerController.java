@@ -61,7 +61,7 @@ public class CustomerController {
         if(c != null){
             models.put("customer", c);
             return "customer.jsp";
-        }else return "Error404.jps";
+        }else return "Error404.jsp";
     }
     
     @GET
