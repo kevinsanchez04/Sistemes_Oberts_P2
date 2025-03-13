@@ -27,4 +27,9 @@
         <img src="./images/customers_pc.png">
         <img src="./images/customers_mobile.png">
     </li>
+    <li>
+        <h3>Profile</h3>
+        <img src="./images/profile_pc.png">
+        <img src="./images/profile_mobile.png">
+    </li>
 </ul>
